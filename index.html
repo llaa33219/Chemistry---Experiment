@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>가상 화학 실험실</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header id="toolbar">
+        <h1>가상 화학 실험실</h1>
+        <div id="controls">
+            <div class="dropdown">
+                <button id="elements-button" class="dropbtn">원소</button>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">화합물</button>
+                <div id="compounds-dropdown" class="dropdown-content">
+                    <!-- 화합물이 여기에 동적으로 추가됩니다 -->
+                </div>
+            </div>
+             <div class="dropdown">
+                <button class="dropbtn">도구</button>
+                <div id="tools-dropdown" class="dropdown-content">
+                    <!-- 도구가 여기에 동적으로 추가됩니다 -->
+                </div>
+            </div>
+            <div id="direct-controls">
+                <!-- 섞기, 뚜껑, 초기화 등 즉시 실행 버튼이 위치합니다 -->
+            </div>
+        </div>
+    </header>
+    <main>
+        <div id="beaker-container">
+            <!-- Matter.js 캔버스가 여기에 삽입됩니다. -->
+        </div>
+        <div id="periodic-table-container" class="hidden">
+            <div id="periodic-table"></div>
+            <button id="close-periodic-table">닫기</button>
+        </div>
+    </main>
+    <aside id="reaction-panel">
+        <h2>화학 반응</h2>
+        <div id="equations">
+            <!-- 현재 반응식이 여기에 표시됩니다. -->
+        </div>
+        <div id="simulation-stats">
+            <h3>시뮬레이션 정보</h3>
+            <p>온도: <span id="temp-display">0.0</span> K</p>
+            <p>압력: <span id="pressure-display">0.00</span> kPa</p>
+        </div>
+    </aside>
+    <div id="tooltip" class="hidden"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
+    <script src="reactions.js"></script>
+    <script src="script.js"></script>
+</body>
+</html> 
